@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import ExpenseItem from "./components/ExpenseItem";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const data = [
+		{ title: "car insurance", date: new Date(2021,5,4), amount: "123$" },
+		{ title: "bike insurance", date: new Date(), amount: "123$" },
+	];
+	return (
+		<div className="App">
+      <ExpenseItem title={data[0].title} month = {data[0].date.getMonth()} day = {data[0].date.getDay()} year ={data[0].date.getFullYear()}  ></ExpenseItem>
+      <ExpenseItem title ={data[1].title} ></ExpenseItem> 
+		</div>
+	);
 }
 
 export default App;
