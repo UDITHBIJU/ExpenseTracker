@@ -1,24 +1,20 @@
 import React from "react";
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
+// gets data from app.js using constructors title and date
+export default function ExpenseItem({ title,date,amount}) {
+	
 
-export default function ExpenseItem(props) {
-    const month = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-   
-    return (
-        
-        <div className="expense-item">
-            
+	return (
+		<div className="expense-item">
 			<div>
-				<div>{month[props.month]}</div>
-                <div>{weekday[props.day]}</div>
-                <div>{props.year}</div>
-                
+				{/* passes date from date in ExpenseItem to date in ExpenseDate */}
+				<ExpenseDate date={date}/> 
 			</div>
 			<div className="expense-item__description">
-				<h2>{props.title}</h2>
+				<h2>{title}</h2>
 
-				<div className="expense-item__price">123$</div>
+				<div className="expense-item__price">{amount}</div>
 			</div>
 		</div>
 	);
