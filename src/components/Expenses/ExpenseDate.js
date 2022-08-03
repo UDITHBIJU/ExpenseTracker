@@ -1,5 +1,5 @@
 import React from "react";
-import "./ExpenseDate.css";
+import "../css/ExpenseDate.css";
 
 export default function ExpenseDate({date}) {
 	const month = [
